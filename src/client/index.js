@@ -5,6 +5,9 @@ import store from './store';
 
 import App from './app';
 
+import { configureFakeBackend } from './utils';
+configureFakeBackend();
+
 render(
      <Provider store={store}>
            <App />

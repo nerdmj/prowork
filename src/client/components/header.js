@@ -12,7 +12,9 @@ class Header extends React.Component {
 
                 <div className="header_links">
                     <Link to="/">Home</Link>
-                    <Link to="/">About Us</Link>
+                    <Link to="/">
+                      About Us
+                    </Link>
                     <Link to="/">Services</Link>
                     <Link to="/">Clients</Link>
                     <Link to="/">Contact Us</Link>
