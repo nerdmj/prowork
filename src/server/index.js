@@ -4,7 +4,7 @@ let webServer = new WebServer();
 
 webServer.start()
  .then(() => {
-   console.log('Web server started!')
+   console.log('Web server started @ localhost:3000')
  })
  .catch(() => {
    console.error(err);

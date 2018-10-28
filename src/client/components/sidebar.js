@@ -9,14 +9,17 @@ class SideBar extends React.Component {
       let authenticateUser = localStorage.getItem('user');
         return (
             <Fragment>
-                <div className="logo">
+
+                <div className="logo_wrapper">
+                  <h1>
                     <Link to="/" >
                        ProWorkflow
                     </Link>
+                  </h1>
                 </div>
 
                 <nav className="signbar_nav">
-                    <div>
+                    <div className="headline">
                         Main navigation
                     </div>
 

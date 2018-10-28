@@ -1,0 +1,37 @@
+header {
+
+    .topnav {
+        background-color: $darkSlateGray;
+        overflow: hidden;
+
+        a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            pointer-events: none;
+            cursor: default;
+
+            :hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .active {
+                background-color: #4CAF50;
+                color: white;
+            }
+        }
+    }
+
+    .header_links {
+        position: relative;
+        top: 50%;
+        vertical-align: top;
+
+    }
+
+
+}

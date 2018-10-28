@@ -1,0 +1,53 @@
+.project_listing{
+  background-color: $orange;
+
+  .project_search{
+    input{
+      line-height: 2.5;
+      width:100%;
+      padding: 15px;
+    }
+  }
+
+  .projects{
+    padding: 20px 75px;
+
+    article{
+      border-bottom: 1px solid $darkSlateGray;
+      margin-bottom: 20px;
+      padding-bottom: 25px;
+
+      a {
+        color: $linkCol;
+
+         &:hover{
+           color: $dark_blue;
+         }
+      }
+
+      .project_by{
+        overflow: hidden;
+        padding-bottom: 10px;
+        .company{
+          float: left;
+        }
+
+        .manager{
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.project_timeline{
+  overflow:hidden;
+  padding-bottom: 3px;
+  font-size: 1.2rem;
+  .start_date{
+    float:left;
+  }
+  .due_date{
+    float:right;
+  }
+}

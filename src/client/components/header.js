@@ -11,13 +11,15 @@ class Header extends React.Component {
             <header>
 
                 <div className="header_links">
-                    <Link to="/">Home</Link>
-                    <Link to="/">
+                  <ul className="topnav">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">
                       About Us
-                    </Link>
-                    <Link to="/">Services</Link>
-                    <Link to="/">Clients</Link>
-                    <Link to="/">Contact Us</Link>
+                    </Link></li>
+                    <li><Link to="/">Services</Link></li>
+                    <li><Link to="/">Clients</Link></li>
+                    <li><Link to="/">Contact Us</Link></li>
+                  </ul>
                 </div>
 
             </header>

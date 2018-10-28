@@ -42,17 +42,45 @@ export default class ProjectListing extends React.Component{
   render(){
 
     const { title, projectNumber, startDate, dueDate, priority, description, timeAllocated} = this.state;
+    let priorityText = '';
+    switch (priority) {
+      case 1:
+         priorityText = 'Very Low';
+        break;
+      case 2:
+         priorityText = 'Low';
+        break;
+      case 3:
+         priorityText = 'Medium';
+        break;
+      case 4:
+         priorityText = 'High';
+        break;
+      case 5:
+         priorityText = 'Very High';
+        break;
+      default:
+
+    }
 
     return (
-      <div>
+      <div className="project_detail">
+
         <h2>{title}</h2>
-        <b>Project Number: {projectNumber} </b>
-        <div className="project-timeline">
-          <strong>Start date: {startDate}</strong>
-          <strong>Due Date: {dueDate}</strong>
+        <div className="project_info">
+          <strong>Priority: {priorityText}</strong>
+          <b>Project Number: {projectNumber} </b>
         </div>
-        <strong>Priority: {priority}</strong>
-        <div><p>{description}</p></div>
+        <div className="project_timeline">
+          <span className="start_date">Start Date: {startDate} </span>
+          <span className="due_date">End Date: {dueDate}</span>
+        </div>
+
+        <div className="project_description">
+          <span>Project Description: </span>
+          <p>{description}</p>
+          </div>
+
       </div>
     )
   }

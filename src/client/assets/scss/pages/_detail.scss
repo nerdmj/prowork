@@ -1,0 +1,22 @@
+.project_detail{
+    padding: 50px;
+
+  .project_info{
+    overflow: hidden;
+    b{
+      float: right;
+    }
+    strong{
+      float: left;
+    }
+
+  }
+
+  .project_description {
+    padding: 20px 0;
+
+    span{
+      display: block;
+    }
+  }
+}

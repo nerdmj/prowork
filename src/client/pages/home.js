@@ -8,16 +8,15 @@ class Home extends React.Component {
 
     constructor(props){
         super(props);
-
-        // // reset login status
-        // this.props.dispatch(userActions.logout());
-
         this.state = {
             ...initialState
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
+    componentDidMount() {
+        this.props.dispatch(userActions.getAll());
     }
 
     clearState() {
@@ -43,14 +42,15 @@ class Home extends React.Component {
     }
 
     render(){
-        const { loggingIn } = this.props;
+        const { user, users } = this.props;
         const { username, password, error, submitted } = this.state;
         let authenticateUser = localStorage.getItem('user');
 
         return (
-<div>
+            <div>
+
             { authenticateUser != null &&
-            <h2>Hello loggedIn user</h2>
+            <h2>You are logged-in user. </h2>
             }
 
             { authenticateUser === null &&
@@ -116,9 +116,11 @@ const initialState = {
 }
 
 function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
+    const { users, authentication } = state;
+    const { user } = authentication;
     return {
-        loggingIn
+        user,
+        users
     };
 }
 

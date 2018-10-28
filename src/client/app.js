@@ -29,37 +29,29 @@ class App extends React.Component {
     render() {
         const { alert } = this.props;
         return (
-            <div className="jumbotron">
-                <div className="container">
-                    <div className="col-sm-8 col-sm-offset-2">
-                        <Router history={history}>
-                            <div>
-                              <Switch>
-                                <PrivateRoute path={URL.PROJECT_LISTING} component={ProjectListing} />
+              <Router history={history}>
+                    <Switch>
+                      <PrivateRoute path={URL.PROJECT_LISTING} component={ProjectListing} />
 
-                                <PrivateRoute path={URL.PROJECT_DETAIL} component={ProjectDetail} />
+                      <PrivateRoute path={URL.PROJECT_DETAIL} component={ProjectDetail} />
 
-                                <Route path={URL.DEFAULT} exact render={props => (
-                                      <MainLayout>
-                                          <Home {...props} />
-                                      </MainLayout>
-                                )} />
+                      <Route path={URL.DEFAULT} exact render={props => (
+                            <MainLayout>
+                                <Home {...props} />
+                            </MainLayout>
+                      )} />
 
-                                <Route path={URL.SIGN_OUT} exact render={props => (
-                                          <Logout {...props} />
-                                )} />
+                      <Route path={URL.SIGN_OUT} exact render={props => (
+                                <Logout {...props} />
+                      )} />
 
-                                <Route path='*' render={props => (
-                                          <MainLayout>
-                                              <NotFound {...props} />
-                                          </MainLayout>
-                                )} />
-                            </Switch>
-                            </div>
-                        </Router>
-                    </div>
-                </div>
-            </div>
+                      <Route path='*' render={props => (
+                                <MainLayout>
+                                    <NotFound {...props} />
+                                </MainLayout>
+                      )} />
+                  </Switch>
+              </Router>
         );
     }
 }
