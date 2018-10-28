@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { userActions } from '../actions';
 
@@ -15,9 +16,9 @@ class Home extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
+    // componentDidMount() {
+    //     this.props.dispatch(userActions.getAll());
+    // }
 
     clearState() {
         this.setState({...initialState})
@@ -38,19 +39,23 @@ class Home extends React.Component {
         const { dispatch } = this.props;
         if (username && password) {
             dispatch(userActions.login(username, password));
+            dispatch(userActions.getAll());
         }
     }
 
     render(){
         const { user, users } = this.props;
+
         const { username, password, error, submitted } = this.state;
         let authenticateUser = localStorage.getItem('user');
 
         return (
             <div>
 
+
+
             { authenticateUser != null &&
-            <h2>You are logged-in user. </h2>
+            <h2>You are already logged-in. </h2>
             }
 
             { authenticateUser === null &&
@@ -67,7 +72,7 @@ class Home extends React.Component {
                                     <div className="form_wrap">
 
                                         <div>
-                                            {this.state.error}
+                                            {users.error && <span className="text-danger">ERROR: Unauthorized User</span>}
                                         </div>
 
                                         <div className="form_row">
@@ -114,6 +119,11 @@ const initialState = {
     error: '',
     submitted: false
 }
+
+Home.propTypes = {
+  user: PropTypes.string,
+  users: PropTypes.object,
+};
 
 function mapStateToProps(state) {
     const { users, authentication } = state;

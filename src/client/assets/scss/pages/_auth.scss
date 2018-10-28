@@ -7,6 +7,14 @@
     margin: 4rem auto 0;
     border: 1px solid $darkSlateGray;
 
+    .text-danger{
+      background-color: red;
+      color: $white;
+      width: 100%;
+      display: block;
+      padding: 20px;
+    }
+
     &.fullWidth {
         max-width: none;
     }
